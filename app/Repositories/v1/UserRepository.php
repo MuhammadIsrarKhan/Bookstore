@@ -26,4 +26,8 @@ class UserRepository extends BaseRepository
         }
         return $user->createToken('token')->plainTextToken;
     }
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
+    }
 }

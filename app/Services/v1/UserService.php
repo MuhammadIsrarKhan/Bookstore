@@ -26,4 +26,13 @@ class UserService extends BaseService
             return $this->sendErrorResponse($e->getMessage());
         }
     }
+    public function logout()
+    {
+        try {
+            $this->userRepository->logout();
+            return $this->sendSuccessResponse(null, 'User logged out successfully');
+        } catch (\Throwable $e) {
+            return $this->sendErrorResponse($e->getMessage());
+        }
+    }
 }
