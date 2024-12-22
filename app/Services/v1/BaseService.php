@@ -17,6 +17,16 @@ class BaseService
         ], $status);
     }
 
+    public function sendNotFoundResponse($message = 'Not Found', $status = 404)
+    {
+        return response()->json([
+            'success' => false,
+            'data'    => null,
+            "message" => $message,
+            'errors' => null
+        ], $status);
+    }
+
     public function sendErrorResponse($message = 'Server Error', $status = 500)
     {
         return response()->json([

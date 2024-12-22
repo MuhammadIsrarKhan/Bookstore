@@ -16,4 +16,14 @@ class UserService extends BaseService
             return $this->sendErrorResponse($e->getMessage());
         }
     }
+    public function login($request)
+    {
+        try {
+            $token = $this->userRepository->login($request);
+            $data['token'] = $token;
+            return $this->sendSuccessResponse($data, 'User logged in successfully');
+        } catch (\Throwable $e) {
+            return $this->sendErrorResponse($e->getMessage());
+        }
+    }
 }
