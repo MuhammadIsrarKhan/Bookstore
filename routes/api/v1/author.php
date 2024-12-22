@@ -3,7 +3,7 @@
 use App\Http\Controllers\Api\v1\AuthorController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth:sanctum', 'api'])->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/', [AuthorController::class, 'index'])->name('api.v1.authors.index');
     Route::post('/', [AuthorController::class, 'store'])->name('api.v1.authors.store');
     Route::get('/{author}', [AuthorController::class, 'show'])->name('api.v1.authors.show');

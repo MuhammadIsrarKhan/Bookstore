@@ -13,3 +13,7 @@ Route::prefix('books')->group(function () {
 Route::prefix('authors')->group(function () {
     include 'author.php';
 });
+
+Route::prefix('categories')->group(function () {
+    include 'category.php';
+});
